@@ -29,3 +29,27 @@
 
 ##### 8.3 Web 数据库架构
     浏览器 <——> Web 服务器 <——> PHP 引擎 <——> MySQL 服务器
+    
+> 随着应用程序在大小和复杂度上的不断增加，我们可能会将 PHP 应用程序分成不同的层——通常，包括与 MySQL 交互的数据库层、包含了应用程序核心的业务逻辑层和管理 HTML 输出的的表示层。
+
+#### 9 创建 Web 数据库
+
+- 登录 MySQL
+
+    > mysql -h hostname -u username -p
+
+- 创建数据库
+
+    > create database dbname;
+
+- 创建用户
+
+    > grant all on * to rain identified by 'admin' with grant option;
+
+    > revoke all on * from rain;
+
+- 创建数据库表
+
+    > create table tablename(columns)
+
+Note：AUTO_INCREMENT 是一个特殊的 MySQL 特性。它的意思是在表中插入行的时候，如果将该字段设置为空，那么 MySQL 将自动产生一个唯一的标识符值。该值比本列中现存的最大值更大。
