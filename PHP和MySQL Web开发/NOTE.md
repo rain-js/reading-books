@@ -77,6 +77,13 @@ Note：AUTO_INCREMENT 是一个特殊的 MySQL 特性。它的意思是在表中
 
     ![img](./images/groupBy.png)
 
+    **4. limit**
+
+    > limit 带两个参数： 起始行号与返回行数。行号是以 0 开始索引的。
+
+    ![img](./images/limit.png)
+
+
 - 更新数据
 
     > update tablename set column = expression where condition;
