@@ -56,19 +56,31 @@ Note：AUTO_INCREMENT 是一个特殊的 MySQL 特性。它的意思是在表中
 
 #### 10 使用 MySQL 数据库
 
+##### 10.1 增删改查
 - 插入数据
 
+    > insert into customers (name, city) values ('Melissa Jones', 'Nar Nar Goon North');
 
 - 获取数据
 
 
 - 更新数据
 
+    > update tablename set column = expression where condition;
 
 - 删除数据
 
+    > delete from tablename;
+
+##### 10.2 其它
+- 修改表
+
+    > alter table customers modify name char(70) not null;
 
 - 表的删除
 
+    > drop table tablename;
 
 - 删除整个数据库
+
+    > drop database databasename;
