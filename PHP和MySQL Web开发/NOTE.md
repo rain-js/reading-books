@@ -68,6 +68,10 @@ Note：AUTO_INCREMENT 是一个特殊的 MySQL 特性。它的意思是在表中
     **1. left join**
 
     ![img](./images/leftJoin.png)
+    
+    **2. order by**
+
+    ![img](./images/orderBy.png)
 
 - 更新数据
 
