@@ -63,6 +63,11 @@ Note：AUTO_INCREMENT 是一个特殊的 MySQL 特性。它的意思是在表中
 
 - 获取数据
 
+    > select name, city from customers;
+
+    **1. left join**
+
+    ![img](./images/leftJoin.png)
 
 - 更新数据
 
