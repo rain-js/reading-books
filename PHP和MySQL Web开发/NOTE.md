@@ -104,3 +104,16 @@ Note：AUTO_INCREMENT 是一个特殊的 MySQL 特性。它的意思是在表中
 - 删除整个数据库
 
     > drop database databasename;
+
+#### 11 使用 PHP 从 Web 访问 MySQL 数据库
+
+##### 11.1 Web 数据库架构的工作原理
+
+##### 11.2 从 Web 查询数据库的基本步骤
+
+##### 11.3 使用 Prepared 语句
+
+##### 11.4 使用 PHP 与数据库交互的其它接口
+
+
+
