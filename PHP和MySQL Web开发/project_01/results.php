@@ -11,8 +11,8 @@
     $searchType = $_POST['searchType'];
     $searchTerm = trim($_POST['searchTerm']);
 
-    echo '$searchType: '.$searchType.'<br/>';
-    echo '$searchTerm: '.$searchTerm.'<br/>';
+    // echo '$searchType: '.$searchType.'<br/>';
+    // echo '$searchTerm: '.$searchTerm.'<br/>';
 
     if (!$searchType || !$searchTerm) {
         echo 'You have not entered search details. Please go back and try again.';
@@ -39,9 +39,17 @@
     echo '<p>Number of books found: '.$num_results.'</p>';
 
     for ($i = 0; $i < $num_results; $i++) { 
-         $row = $result->fetch_assoc();
-        var_dump($row);
+        $row = $result->fetch_assoc();
+        // var_dump($row);
+
+        echo '<p><strong>'.($i+1).'. isbn: </strong>'.$row['isbn'].'</p>';
+        echo '<p><strong>author: </strong>'.$row['author'].'</p>';
+        echo '<p><strong>title: </strong>'.$row['title'].'</p>';
+        echo '<p><strong>price: </strong>'.$row['price'].'</p><br />';
     }
+
+    $result->free();
+    $db->close();
 ?>
 </body>
 </html>
