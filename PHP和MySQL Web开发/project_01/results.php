@@ -20,6 +20,7 @@
     }
 
     if (!get_magic_quotes_gpc()) {
+        // echo '未启用魔术引号特征';
         $searchType = addslashes($searchType);
         $searchTerm = addslashes($searchTerm);
     }
@@ -42,14 +43,24 @@
         $row = $result->fetch_assoc();
         // var_dump($row);
 
-        echo '<p><strong>'.($i+1).'. isbn: </strong>'.$row['isbn'].'</p>';
-        echo '<p><strong>author: </strong>'.$row['author'].'</p>';
-        echo '<p><strong>title: </strong>'.$row['title'].'</p>';
-        echo '<p><strong>price: </strong>'.$row['price'].'</p><br />';
+        echo '<p><strong>'.($i+1).'. isbn: </strong>'.stripslashes($row['isbn']).'</p>';
+        echo '<p><strong>author: </strong>'.stripslashes($row['author']).'</p>';
+        echo '<p><strong>title: </strong>'.stripslashes($row['title']).'</p>';
+        echo '<p><strong>price: </strong>'.stripslashes($row['price']).'</p><br />';
     }
 
     $result->free();
     $db->close();
+
+
+    // addslashes() & stripslashes()
+    // $str = "I'm rain";
+
+    // $str = addslashes($str);
+    // echo $str;   // I\'m rain
+
+    // $str = stripslashes($str);
+    // echo $str;   // I'm rain
 ?>
 </body>
 </html>
