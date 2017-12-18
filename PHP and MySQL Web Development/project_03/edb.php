@@ -3,11 +3,32 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Document</title>
+	<style>
+		.container, .result {
+			width: 350px;
+			border: 1px solid #ccc;
+			margin: 100px auto 0;
+			padding: 20px;
+		}
+		.container h1,.container form {
+			padding: 0 10px;
+		}
+	</style>
 </head>
 <body>
-	<h1>查询结果</h1>
+	<div class="container">
+		<h1>中医体质报告查询</h1>
+		<form action="#" method="post">
+			<p>请输入个人编号：<input type="text" name="personalNo"></p>
+			<p><input type="submit" value="确定"></p>
+		</form>
+	</div>
 
 <?php
+	
+	if (!isset($_POST['personalNo'])) {
+		return;
+	}
 	$personalNo = trim($_POST['personalNo']);
 
 	if (!get_magic_quotes_gpc()) {
@@ -42,7 +63,7 @@
 	for ($i = 0; $i < $num_results; $i++) {
 		$row = $result->fetch_assoc();
 
-		echo '<table>';
+		echo '<table class="result">';
 		echo '<tr><td>姓名 '.$row['a01002'].'</td>'.'<td>编号 '.$row['a01001'].'</td>'.'</tr>';
 		echo '<tr><td>性别 '.$row['a01003'].'</td>'.'<td>日期 '.$row['a01005'].'</td>'.'</tr>';
 		echo '</table>';
