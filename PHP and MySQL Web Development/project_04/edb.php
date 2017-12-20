@@ -24,11 +24,37 @@
 	<div class="container">
 		<h1>中医体质报告接口</h1>
 		<form action="#" method="post">
-			<p>请输入个人编号：<input type="text" name="personalNo"></p>
-			<p>请输入体检号码：<input type="text" name="medicalNo"></p>
-			<p><input type="submit" value="确定"></p>
+			<p>请输入个人编号：<input type="text" name="personalNo" id="personalNo"></p>
+			<p>请输入体检号码：<input type="text" name="medicalNo" id="medicalNo"></p>
+			<p><input type="submit" value="确定" id="submitBtn"></p>
 		</form>
 	</div>
+
+<script>
+	var log = console.log.bind(console);
+
+	var submitBtn = document.getElementById('submitBtn');
+
+	submitBtn.onclick = function() {
+		var personalNo = document.getElementById('personalNo').value,
+			medicalNo = document.getElementById('medicalNo').value;
+
+		// log(personalNo);
+		// log(medicalNo);
+
+		if (!personalNo.trim()) {
+			alert('请输入个人编号！');
+			return false;
+		}
+
+		if (!medicalNo.trim()) {
+			alert('请输入体检号码！');
+			return false;
+		}
+		return true;
+	}
+
+</script>
 
 <?php
 	
