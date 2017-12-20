@@ -11,7 +11,9 @@
 			padding: 20px;
 		}
 		.info {
+			width: 500px;
 			color: red;
+			text-align: center;
 		}
 		.container h1,.container form {
 			padding: 0 10px;
@@ -57,7 +59,7 @@
 	$row = $personalInfo->fetch_assoc();
 
 	if (!$num_results) {
-		echo '<p class="info">未查询到对应的记录，请检查个人编号是否正确！</p>';
+		echo '<p class="info">未查询到对应的记录，请检查个人编号('.$personalNo.')是否正确！</p>';
 		exit;
 	}
 	// var_dump($result);
@@ -74,7 +76,7 @@
 		echo '<p class="info">数据更新失败，请稍后再试！</p>';
 		exit;
 	} else {
-		echo '<p class="info">已将个人编号：'.$row['a01001'].',姓名：'.$row['a01002'].'的体检号更正为：'.$medicalNo;
+		echo '<p class="info">已将个人编号：'.$row['a01001'].' 姓名：'.$row['a01002'].'的体检号更正为：'.$medicalNo;
 	}
 
 	$db->close();
