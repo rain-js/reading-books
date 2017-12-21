@@ -1,33 +1,42 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
 	<meta charset="UTF-8">
 	<title>Document</title>
+	<link rel="stylesheet" href="./bootstrap-3.3.7-dist/css/bootstrap.css">
 	<style>
-		.container, .info {
-			width: 350px;
-			border: 1px solid #ccc;
-			margin: 50px auto 0;
-			padding: 20px;
-		}
 		.info {
-			width: 500px;
+			width: 460px;
+			border: 1px solid #ccc;
+			border-radius: 4px;
+			margin: 50px auto 0;
+			padding: 10px;
 			color: red;
 			text-align: center;
 		}
-		.container h1,.container form {
-			padding: 0 10px;
+		u {
+			color: blue;
 		}
 	</style>
 </head>
 <body>
 	<div class="container">
-		<h1>中医体质报告接口</h1>
-		<form action="#" method="post">
-			<p>请输入个人编号：<input type="text" name="personalNo" id="personalNo"></p>
-			<p>请输入体检号码：<input type="text" name="medicalNo" id="medicalNo"></p>
-			<p><input type="submit" value="确定" id="submitBtn"></p>
-		</form>
+		<div class="row">
+			<div class="col-md-4 col-md-offset-4">
+				<h1>中医体质报告接口</h1>
+				<form action="#" method="post">
+					<div class="form-group">
+						<label for="personalNo">个人编号</label>
+						<input type="text" class="form-control" name="personalNo" id="personalNo" placeholder="请输入个人编号">
+					</div>
+					<div class="form-group">
+						<label for="medicalNo">体检号码</label>
+						<input type="text" class="form-control" name="medicalNo" id="medicalNo" placeholder="请输入体检号码">
+					</div>
+					<button type="submit" class="btn btn-primary" id="submitBtn">确定</button>
+				</form>
+			</div>
+		</div>
 	</div>
 
 <script>
@@ -85,7 +94,7 @@
 	$row = $personalInfo->fetch_assoc();
 
 	if (!$num_results) {
-		echo '<p class="info">未查询到对应的记录，请检查个人编号('.$personalNo.')是否正确！</p>';
+		echo '<p class="info">未查询到对应的记录，请检查个人编号<u>'.$personalNo.'</u>是否正确！</p>';
 		exit;
 	}
 	// var_dump($result);
@@ -102,7 +111,7 @@
 		echo '<p class="info">数据更新失败，请稍后再试！</p>';
 		exit;
 	} else {
-		echo '<p class="info">已将个人编号：'.$row['a01001'].' 姓名：'.$row['a01002'].'的体检号更正为：'.$medicalNo;
+		echo '<p class="info">已将个人编号<u>'.$row['a01001'].'</u> 姓名<u>'.$row['a01002'].'</u>的体检号更正为<u>'.$medicalNo.'</u>！';
 	}
 
 	$db->close();
