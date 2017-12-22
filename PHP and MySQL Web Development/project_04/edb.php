@@ -13,14 +13,12 @@
 			padding: 10px;
 			color: red;
 			text-align: center;
-			background: -webkit-linear-gradient(0deg, rgba(180,227,145,1) 0, rgba(97,196,25,1) 50%, rgba(180,227,145,1) 100%);
-  background: -moz-linear-gradient(90deg, rgba(180,227,145,1) 0, rgba(97,196,25,1) 50%, rgba(180,227,145,1) 100%);
-  background: linear-gradient(90deg, rgba(180,227,145,1) 0, rgba(97,196,25,1) 50%, rgba(180,227,145,1) 100%);
 		}
 		u {
 			color: blue;
 		}
 		body {
+			padding-top: 20px;
 			background-image: url(./bg.png);
 		}
 	</style>
