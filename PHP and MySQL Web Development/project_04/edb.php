@@ -17,6 +17,9 @@
 		u {
 			color: blue;
 		}
+		body {
+			background-image: url(./bg.png);
+		}
 	</style>
 </head>
 <body>
