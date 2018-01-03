@@ -21,7 +21,7 @@ select ea01.a01001 as "编号",
 	ei05.i05007 as "脉力",
 	ei05.i05004 as "脉名提示",
 	em01.m01004 as "评分",
-	em01.m01003	as "结果"--体质分类判定结果
+	em01.m01003	as "结果"
 	from ea01
 	left join ea02 on ea01.a01001 = ea02.a02002
 	left join ei03 on ea01.a01001 = ei03.i03002
