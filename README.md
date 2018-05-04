@@ -4,3 +4,12 @@
 - 《JavaScript高级程序设计》
 
 - 《PHP和MySQL Web开发》
+
+### 写文章计划
+1. 理解 BFC
+
+2. Form 相关知识
+
+3. 你不懂的 GET 和 POST
+
+4. HTTP 协议
